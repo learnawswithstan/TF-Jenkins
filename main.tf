@@ -1,12 +1,26 @@
-provider "aws" {
-    region = "us-east-1"  
+terraform {
+
+  required_version = ">= 1.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
+  }
 }
 
-resource "aws_s3_bucket" "stan-test-bucket-401" {
-  bucket = "stan-test-bucket-401"
+provider "aws" {
+  region = var.aws_region
+}
+
+resource "aws_s3_bucket" "demo_bucket" {
+
+  bucket = var.bucket_name
 
   tags = {
-    Name        = "Stan bucket 401"
+    Name        = "Terraform-Jenkins-Demo"
     Environment = "Dev"
+    Owner       = "Stan"
   }
 }
