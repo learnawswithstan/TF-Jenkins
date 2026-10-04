@@ -16,6 +16,7 @@ pipeline {
                         dir("terraform")
                         {
                             git url: "https://github.com/learnawswithstan/TF-Jenkins.git"
+                            +refs/heads/*:refs/remotes/origin/*
                         }
                     }
                 }
