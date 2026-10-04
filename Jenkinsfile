@@ -15,7 +15,7 @@ pipeline {
                  script{
                         dir("terraform")
                         {
-                            git url: "https://github.com/learnawswithstan/TF-Jenkins.git"
+                            git branch: 'main', url: "https://github.com/learnawswithstan/TF-Jenkins.git"
                         }
                     }
                 }
