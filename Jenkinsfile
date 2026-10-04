@@ -13,7 +13,7 @@ pipeline {
         stage('checkout') {
             steps {
                  script{
-                        dir("terraform")
+                        dir("terraform-with-stan")
                         {
                             git "https://github.com/learnawswithstan/TF-Jenkins.git"
                         }
